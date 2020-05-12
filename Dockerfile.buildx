@@ -1,0 +1,6 @@
+FROM docker:git
+RUN mkdir /root/.docker # buildkit
+RUN echo '{"experimental": "enabled"}' > /root/.docker/config.json # buildkit
+RUN wget -O /root/.docker/cli-plugins/docker-buildx \
+  https://github.com/docker/buildx/releases/download/v0.4.1/buildx-v0.4.1.linux-amd64 # buildkit
+RUN chmod a+x /root/.docker/cli-plugins/docker-buildx # buildkit
