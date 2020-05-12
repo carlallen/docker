@@ -1,4 +1,5 @@
 FROM docker:git
+RUN apk add --no-cache bash
 RUN mkdir -p /root/.docker/cli-plugins # buildkit
 RUN echo '{"experimental": "enabled"}' > /root/.docker/config.json # buildkit
 RUN wget -O /root/.docker/cli-plugins/docker-buildx \
